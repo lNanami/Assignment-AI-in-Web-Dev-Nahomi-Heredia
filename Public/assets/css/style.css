@@ -1,0 +1,245 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #091124;
+    color: #E0E7FF;
+    line-height: 1.6;
+}
+
+/* Persona Card */
+.persona {
+    display: grid;
+    grid-template-columns: 1fr;
+    min-height: 100vh;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    background: url('https://lirp.cdn-website.com/1013ddf8/dms3rep/multi/opt/smiling+woman+in+a+jean+jacket-640w.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+    border-radius: 0 0 0 15px;
+    transition: transform 0.3s ease;
+}
+
+.hero-section:hover {
+    transform: scale(1.01);
+}
+
+.photo-over {
+    position: absolute;
+    background: linear-gradient(180deg, rgba(30, 58, 138, 0) 60%, rgba(59, 130, 246, 0.5) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 1rem;
+    background: rgba(10, 28, 46, 0.7);
+    border-radius: 10px;
+}
+
+.name {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 700;
+    color: #F9FAFB;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.tagline {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    color: #D1D5DB;
+    font-style: italic;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.info-section {
+    padding: 2rem;
+}
+
+/* Header */
+.header-section {
+    background: #122138;
+    border-radius: 10px;
+    display: grid;
+    gap: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin: -2rem -2rem 2rem -2rem;
+}
+
+.section-title {
+    color: #FBBF24;
+    font-size: clamp(1.5rem, 4vw, 1.8rem);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.about-text {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    color: #D1D5DB;
+    line-height: 1.6;
+}
+
+/* Details */
+.details-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.literacy-rating {
+    display: flex;
+    gap: 0.4rem;
+}
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(209, 213, 219, 0.2);
+}
+
+.detail-label {
+    font-style: italic;
+    color: #A0AEC0;
+}
+
+.detail-value {
+    color: #E0E7FF;
+    font-weight: 500;
+}
+
+.rating-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #9dbb27;
+    transition: transform 0.2s ease;
+}
+
+.rating-dot.active:hover {
+    transform: scale(1.2);
+}
+
+/* Grid */
+.content-grid {
+    display: grid;
+    gap: 2.5rem;
+    grid-template-columns: 1fr;
+}
+
+.content-section {
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.content-section:hover {
+    transform: translateY(-5px);
+}
+
+.section-title {
+    color: #FBBF24;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.bullet-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.bullet-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    color: #A0AEC0;
+}
+
+.bullet-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 8px;
+    height: 8px;
+    background: #9dbb27;
+    border-radius: 50%;
+}
+
+/* Styles big*/
+@media (min-width: 768px) {
+    .persona{
+        grid-template-columns: 5fr 7fr;
+        min-height: 100vh;
+    }
+
+    .hero-section {
+        min-height: 100vh;
+        border-radius: 0 0 0 15px;
+    }
+
+    .header-section {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem 3rem;
+    }
+
+    .goals {
+        grid-column: span 2;
+    }
+}
+
+
+/* Mobile */
+@media (max-width: 510px) {
+    .hero-section {
+        padding: 1.5rem;
+    }
+
+    .info-section {
+        padding: 1.5rem;
+    }
+
+    .header-section {
+        margin: -1.5rem -1.5rem 1.5rem -1.5rem;
+        padding: 1.5rem;
+    }
+
+    .detail-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .detail-value {
+        text-align: left;
+    }
+
+    .literacy-rating {
+        align-self: flex-start;
+    }
+}
